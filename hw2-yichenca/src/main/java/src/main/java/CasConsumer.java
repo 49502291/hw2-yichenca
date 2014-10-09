@@ -46,7 +46,7 @@ public class CasConsumer extends CasConsumer_ImplBase {
 //	 public static Performance p = new Performance();
 	  public static final String PARAM_OUTPUTDIR = "OutputDirectory";
 //	  private static int count =0;
-	  private File mOutputDir;
+//	  private File mOutputDir;
 	  private BufferedWriter write;
 
 	  /**
@@ -62,11 +62,11 @@ public class CasConsumer extends CasConsumer_ImplBase {
 	  
 	  public void initialize() throws ResourceInitializationException {
 		  
-		    mOutputDir = new File((String) getConfigParameterValue(PARAM_OUTPUTDIR));
-		    if (!mOutputDir.exists()) {
-		      mOutputDir.mkdirs();
-		    }
-		    String aa = mOutputDir.getPath();
+		    String aa = ((String) getConfigParameterValue(PARAM_OUTPUTDIR)).trim();
+//		    if (!mOutputDir.exists()) {
+//		      mOutputDir.mkdirs();
+//		    }
+	//	    String aa = mOutputDir.getPath();
 		   
 		    try {
 				write = new BufferedWriter (new FileWriter(aa));
